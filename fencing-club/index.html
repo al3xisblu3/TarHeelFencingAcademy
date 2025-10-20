@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetzer Fencing Club | Chapel Hill</title>
+    <title>Tar Heels Fencing Club | Chapel Hill</title>
     <style>
       /* Global Styles */
       :root {
@@ -50,7 +50,8 @@
       /* Navigation */
       .navbar { background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
       .navbar .container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 20px; }
-      .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
+      .logo { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.25rem; font-weight: 700; color: var(--primary-color); }
+      .logo img { height: 40px; width: auto; display: block; }
 
       /* CSS-only mobile menu */
       #menu-toggle { display: none; }
@@ -128,6 +129,7 @@
           .program-cards { grid-template-columns: 1fr; }
           .schedule-row { grid-template-columns: 1fr; gap: 0.5rem; padding: 1rem; text-align: center; }
           .day, .time { font-size: 0.9rem; }
+          .logo img { height: 32px; }
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -139,7 +141,10 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">Fetzer Fencing Club</a>
+            <a href="index.html" class="logo" aria-label="Tar Heels Fencing Club home">
+                <img src="images/THFA logo.png" alt="THFA logo">
+                <span>Tar Heels Fencing Club</span>
+            </a>
             <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" class="menu-icon" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
@@ -157,7 +162,7 @@
     <!-- Hero Section -->
     <header id="home" class="hero">
         <div class="container">
-            <h1>Welcome to Fetzer Fencing Club</h1>
+            <h1>Welcome to Tar Heels Fencing Club</h1>
             <p>Where passion meets the art of fencing in the heart of Chapel Hill</p>
             <a href="contact.html" class="cta-button">Join Us Today</a>
         </div>
@@ -167,7 +172,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Fetzer Fencing Club. All rights reserved.</p>
+            <p>&copy; 2025 Tar Heels Fencing Club. All rights reserved.</p>
         </div>
     </footer>
 </body>

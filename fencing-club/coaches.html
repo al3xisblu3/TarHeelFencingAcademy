@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coaches | Fetzer Fencing Club</title>
+  <title>Coaches | Tar Heels Fencing Club</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -15,13 +15,14 @@
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
     .navbar{position:sticky;top:0;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1);z-index:1000}
     .navbar .container{display:flex;justify-content:space-between;align-items:center;padding:1rem 20px}
-    .logo{font-weight:700;color:var(--primary-color)}
+    .logo{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;color:var(--primary-color);font-size:1.1rem}
+    .logo img{height:40px;width:auto;display:block}
     #menu-toggle{display:none}.menu-icon{display:none;font-size:1.5rem;color:var(--primary-color);background:none;border:none}
     .nav-links{display:flex;gap:2rem}
     .nav-links a{text-decoration:none;color:var(--primary-color);position:relative}
     .nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--secondary-color);transition:var(--transition)}
     .nav-links a:hover::after{width:100%}
-    @media(max-width:768px){.menu-icon{display:block}.nav-links{display:none;position:absolute;left:20px;right:20px;top:64px;background:#fff;flex-direction:column;padding:1rem;border-radius:8px;box-shadow:0 10px 20px rgba(0,0,0,.1)}#menu-toggle:checked~.nav-links{display:flex}}
+    @media(max-width:768px){.menu-icon{display:block}.nav-links{display:none;position:absolute;left:20px;right:20px;top:64px;background:#fff;flex-direction:column;padding:1rem;border-radius:8px;box-shadow:0 10px 20px rgba(0,0,0,.1)}#menu-toggle:checked~.nav-links{display:flex}.logo img{height:32px}}
     header.page-hero{height:40vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('images/hero.jpg') center/cover}
     header.page-hero h1{font-size:2.2rem;color:#fff}
     .coaches{padding:4rem 0;background:var(--light-color)}
@@ -38,7 +39,10 @@
 <body>
   <nav class="navbar">
     <div class="container">
-      <a class="logo" href="index.html">Fetzer Fencing Club</a>
+      <a class="logo" href="index.html" aria-label="Tar Heels Fencing Club home">
+        <img src="images/THFA logo.png" alt="THFA logo">
+        <span>Tar Heels Fencing Club</span>
+      </a>
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="menu-icon" aria-label="Toggle menu"><i class="fas fa-bars"></i></label>
       <div class="nav-links">
@@ -59,7 +63,7 @@
     <div class="container">
       <div class="grid">
         <div class="card">
-          <img src="images/coach.webp" alt="Coach 1">
+          <img src="images/coach2.webp" alt="Coach 1">
           <div class="body">
             <h3>Adam Kaszubowski</h3>
             <div class="role">Foil • Epee • Sabre</div>
@@ -69,7 +73,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="images/coach2.webp" alt="Coach 2">
+          <img src="images/coach.webp" alt="Coach 2">
           <div class="body">
             <h3>Sherif Elbakry</h3>
             <div class="role">Sabre Specialist</div>
@@ -81,12 +85,25 @@
             </p>
           </div>
         </div>
+        <div class="card">
+          <img src="images/coach3.jpg" alt="Matt Jednak">
+          <div class="body">
+            <h3>Matt Jednak</h3>
+            <div class="role">Head Coach</div>
+            <p class="meta">ACC Men's Fencing Coach of the Year | UNC Alumnus</p>
+            <p>Head coach of Carolina Fencing, leading the Tar Heels to the 2024 ACC men's team title — the program's first since 1980. A former UNC fencer and assistant, he was named head coach in 2019 and has guided athletes with a focus on technical excellence, tactics, and competitive development.</p>
+            <p>
+              <a href="https://goheels.com/sports/fencing/roster/coaches/matt-jednak/3592" target="_blank" rel="noopener">View full profile</a>
+              • <a href="mailto:jednak@email.unc.edu">jednak@email.unc.edu</a>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="container"><p>&copy; 2025 Fetzer Fencing Club. All rights reserved.</p></div>
+    <div class="container"><p>&copy; 2025 Tar Heels Fencing Club. All rights reserved.</p></div>
   </footer>
 </body>
 </html>
