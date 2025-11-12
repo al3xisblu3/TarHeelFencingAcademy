@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Tar Heels Fencing Club</title>
+  <title>About | Tar Heels Fencing Academy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -31,22 +31,30 @@
     .about-image{flex:1;text-align:center}
     .about-photo{width:100%;max-height:400px;object-fit:cover;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.1)}
     @media(max-width:992px){.about-content{flex-direction:column}}
+    /* Coaches section styles (migrated from coaches.html) */
+    .coaches{padding:4rem 0;background:var(--light-color)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-top:2rem}
+    .card{background:#fff;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.1);overflow:hidden}
+    .card img{width:100%;height:220px;object-fit:cover}
+    .card .body{padding:1.25rem}
+    .card h3{color:var(--primary-color);margin-bottom:.35rem}
+    .role{color:var(--secondary-color);font-weight:600;margin-bottom:.5rem}
+    .meta{font-size:.9rem;color:#718096;margin-bottom:.75rem}
     footer{background:var(--primary-color);color:#fff;text-align:center;padding:2rem 0;margin-top:3rem}
   </style>
 </head>
 <body>
   <nav class="navbar">
     <div class="container">
-      <a class="logo" href="index.html" aria-label="Tar Heels Fencing Club home">
-        <img src="images/THFA logo.png" alt="THFA logo">
-        <span>Tar Heels Fencing Club</span>
+      <a class="logo" href="index.html" aria-label="Tar Heels Fencing Academy home">
+        <img src="images/thfalogo.png" alt="THFA logo">
+        <span>Tar Heels Fencing Academy</span>
       </a>
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="menu-icon" aria-label="Toggle menu"><i class="fas fa-bars"></i></label>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="coaches.html">Coaches</a>
         <a href="schedule.html">Schedule</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -54,25 +62,70 @@
   </nav>
 
   <header class="page-hero">
-    <h1>About Our Club</h1>
+    <h1>About Our Academy</h1>
   </header>
 
   <section class="about">
     <div class="container">
       <div class="about-content">
         <div class="about-text">
-          <p>Located in the Fetzer Building at the University of North Carolina at Chapel Hill, our fencing club is dedicated to teaching the ancient art of fencing to fencers of all skill levels.</p>
+          <p>Located in the Fetzer Building at the University of North Carolina at Chapel Hill, our fencing Academy is dedicated to teaching the ancient art of fencing to fencers of all skill levels.</p>
           <p>Our experienced coaches and welcoming community make us the perfect place to start your fencing journey or take your skills to the next level.</p>
         </div>
         <div class="about-image">
-          <img src="images/hero2.jpg" alt="Tar Heels Fencing Club" class="about-photo" />
+          <img src="images/hero2.jpg" alt="Tar Heels Fencing Academy" class="about-photo" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaches section migrated from coaches.html -->
+  <section class="coaches">
+    <div class="container">
+      <h2>Meet Our Coaches</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="images/coach2.webp" alt="Coach 1">
+          <div class="body">
+            <h3>Adam Kaszubowski</h3>
+            <div class="role">Foil • Epee • Sabre</div>
+            <p class="meta">USA Fencing certified | 10+ years experience</p>
+            <p>UNC fencing coach supporting foil, epee, and sabre. Adam focuses on technical fundamentals, footwork, and competition strategy for fencers at every level.</p>
+            <p><a href="https://goheels.com/sports/fencing/roster/coaches/adam-kaszubowski/4589" target="_blank" rel="noopener">View full profile</a></p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/coach.webp" alt="Coach 2">
+          <div class="body">
+            <h3>Sherif Elbakry</h3>
+            <div class="role">Sabre Specialist</div>
+            <p class="meta">NCAA experience | Regional medalist</p>
+            <p>Assistant coach at UNC and sabre specialist. Sherif supports athlete development, bout preparation, and team operations with a focus on disciplined technique.</p>
+            <p>
+              <a href="https://goheels.com/sports/fencing/roster/coaches/sherif-mohamed-elbakry/4588" target="_blank" rel="noopener">View full profile</a>
+              • <a href="mailto:selbakry@unc.edu">selbakry@unc.edu</a>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/coach3.jpg" alt="Matt Jednak">
+          <div class="body">
+            <h3>Matt Jednak</h3>
+            <div class="role">Head Coach</div>
+            <p class="meta">ACC Men's Fencing Coach of the Year | UNC Alumnus</p>
+            <p>Head coach of Carolina Fencing, leading the Tar Heels to the 2024 ACC men's team title — the program's first since 1980. A former UNC fencer and assistant, he was named head coach in 2019 and has guided athletes with a focus on technical excellence, tactics, and competitive development.</p>
+            <p>
+              <a href="https://goheels.com/sports/fencing/roster/coaches/matt-jednak/3592" target="_blank" rel="noopener">View full profile</a>
+              • <a href="mailto:jednak@email.unc.edu">jednak@email.unc.edu</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="container"><p>&copy; 2025 Tar Heels Fencing Club. All rights reserved.</p></div>
+    <div class="container"><p>&copy; 2025 Tar Heels Fencing Academy. All rights reserved.</p></div>
   </footer>
 </body>
 </html>
