@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf-redactor-mvp"
+version = "0.1.0"
+description = "MVP tool to redact PII from text-based PDFs (no OCR); creates redacted PDFs and redaction_log.csv"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Alexander Sichitiu" }
+]
+license = { text = "MIT" }
+keywords = ["pdf", "redaction", "pII", "privacy", "anonymization"]
+dependencies = [
+  "pymupdf>=1.24.0",
+  "click>=8.1.7"
+]
+
+[project.scripts]
+pdf-redact = "redactor.cli:main"
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "B", "UP"]
+ignore = []
+exclude = [".git", "build", "dist", "docs"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-q"
+pythonpath = ["."]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+packages = ["redactor"]
