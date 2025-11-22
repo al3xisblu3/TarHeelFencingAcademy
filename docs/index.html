@@ -48,18 +48,27 @@
       .cta-button:hover { background-color: #c53030; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
       /* Navigation */
-      .navbar { background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
+      .navbar { background-color: #4B9CD3; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
       .navbar .container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 20px; }
-      .logo { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.25rem; font-weight: 700; color: var(--primary-color); }
+      .logo { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.25rem; font-weight: 700; color: #ffffff; }
       .logo img { height: 40px; width: auto; display: block; }
 
       /* CSS-only mobile menu */
       #menu-toggle { display: none; }
-      .menu-icon { display: none; background: none; border: none; font-size: 1.5rem; color: var(--primary-color); cursor: pointer; }
+      .menu-icon { display: none; background: none; border: none; font-size: 1.5rem; color: #ffffff; cursor: pointer; }
       .nav-links { display: flex; gap: 2rem; }
-      .nav-links a { font-weight: 500; position: relative; }
-      .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; background-color: var(--secondary-color); bottom: -5px; left: 0; transition: var(--transition); }
+      .nav-links a { font-weight: 500; position: relative; color: #ffffff; }
+      .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; background-color: rgba(255,255,255,0.9); bottom: -5px; left: 0; transition: var(--transition); }
       .nav-links a:hover::after { width: 100%; }
+
+      /* Dropdown (Home) */
+      .dropdown { position: relative; }
+      .dropbtn { background: transparent; border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; color: #fff; padding: 6px 12px; font: inherit; cursor: pointer; display: inline-flex; gap: .5rem; align-items: center; }
+      .dropdown::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 10px; pointer-events: none; }
+      .dropdown-content { display: none; position: absolute; top: 100%; left: 0; min-width: 220px; background: #fff; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); overflow: hidden; z-index: 1001; }
+      .dropdown-content a { display: block; padding: 10px 14px; color: var(--primary-color); border-bottom: 1px solid #edf2f7; }
+      .dropdown-content a:last-child { border-bottom: none; }
+      .dropdown:hover .dropdown-content, .dropdown:focus-within .dropdown-content { display: block; }
 
       /* Hero Section */
       .hero {
@@ -124,6 +133,10 @@
       @media (max-width: 768px) {
           .menu-icon { display: block; }
           .nav-links { display: none; position: absolute; top: 64px; right: 20px; left: 20px; flex-direction: column; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+          .nav-links a { color: var(--primary-color); }
+          .dropbtn { color: var(--primary-color); border-color: #cbd5e0; }
+          .dropdown-content { position: static; display: block; background: transparent; box-shadow: none; border-radius: 0; }
+          .dropdown-content a { padding: 8px 0; border-bottom: none; }
           #menu-toggle:checked ~ .nav-links { display: flex; }
           .hero h1 { font-size: 2.5rem; }
           .program-cards { grid-template-columns: 1fr; }
@@ -131,6 +144,31 @@
           .day, .time { font-size: 0.9rem; }
           .logo img { height: 32px; }
       }
+
+      /* Coaches List (Home) */
+      .coaches-list { padding: 6rem 0; background: var(--light-color); margin-top: 80px; }
+      .coach-row { display: flex; gap: 2rem; align-items: flex-start; background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.08); margin-bottom: 2rem; }
+      .coach-photo { width: 360px; height: 240px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+      .coach-body h3 { margin-bottom: .35rem; color: var(--primary-color); }
+      .coach-body .role { color: var(--secondary-color); font-weight: 700; margin-bottom: .5rem; }
+      .coach-body .meta { color: #718096; font-size: .95rem; margin-bottom: .75rem; }
+      .coach-body p { margin-bottom: .85rem; }
+      .coach-body a { color: var(--secondary-color); font-weight: 600; }
+      .coaches-heading { text-align: center; text-transform: uppercase; letter-spacing: 2px; margin: 0; color: #ffffff; }
+      .coaches-hero { background: #4B9CD3; padding: 2rem 0; margin-bottom: 2rem; }
+      @media (max-width: 992px) { .coach-photo { width: 300px; height: 200px; } }
+      @media (max-width: 768px) { .coach-row { flex-direction: column; } .coach-photo { width: 100%; height: 220px; } }
+
+      /* Bottom Info Hero */
+      .info-hero { position: relative; color: #fff; background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('images/hero.jpg') center/cover no-repeat; padding: 4rem 0; }
+      .info-hero h2 { text-align: center; font-size: 2rem; color: #fff; margin-bottom: 1.25rem; letter-spacing: 1px; }
+      .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 1rem; }
+      .info-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 1rem 1.25rem; display: flex; gap: 0.75rem; align-items: flex-start; min-width: 0; }
+      .info-card i { font-size: 1.25rem; margin-top: 2px; color: #fff; }
+      .info-card .info-content { min-width: 0; }
+      .info-card .info-content h3 { margin: 0 0 .25rem; color: #fff; font-size: 1rem; opacity: .95; }
+      .info-card .info-content p, .info-card .info-content a { margin: 0; color: #fff; opacity: .95; }
+      .info-card a { text-decoration: underline; overflow-wrap: anywhere; word-break: break-word; display: inline-block; max-width: 100%; }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,7 +180,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo" aria-label="Tar Heels Fencing Academy home">
-                <img src="images/thfalogo.png" alt="THFA logo">
+                <img src="images/newlogo.png" alt="THFA logo">
                 <span>Tar Heels Fencing Academy</span>
             </a>
             <input type="checkbox" id="menu-toggle">
@@ -150,22 +188,116 @@
                 <i class="fas fa-bars"></i>
             </label>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="schedule.html">Schedule</a>
-                <a href="contact.html">Contact</a>
+                <div class="dropdown">
+                  <button class="dropbtn">Home <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                  <div class="dropdown-content" role="menu">
+                    <a href="index.html" role="menuitem">Coaches</a>
+                    <a href="about-thfa.html" role="menuitem">About THFA</a>
+                  </div>
+                </div>
+                <div class="dropdown">
+                  <button class="dropbtn">Programs <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                  <div class="dropdown-content" role="menu">
+                    <a href="programs.html" role="menuitem">Programs</a>
+                    <a href="schedule.html" role="menuitem">Schedule</a>
+                  </div>
+                </div>
             </div>
         </div>
     </nav>
     
-    <!-- Hero Section -->
-    <header id="home" class="hero">
+    <!-- Coaches List (Home) -->
+    <main class="coaches-list">
+      <div class="coaches-hero">
         <div class="container">
-            <h1>Welcome to Tar Heels Fencing Academy</h1>
-            <p>Where passion meets the art of fencing in the heart of Chapel Hill</p>
-            <a href="contact.html" class="cta-button">Join Us Today</a>
+          <h1 class="coaches-heading">MEET OUR WORLD-CLASS COACHES</h1>
         </div>
-    </header>
+      </div>
+        <!-- Coach: Adam Kaszubowski -->
+        <article class="coach-row">
+          <img class="coach-photo" src="images/unnamed.jpg" alt="Coach Adam Kaszubowski">
+          <div class="coach-body">
+            <h3>Adam Kaszubowski</h3>
+            <div class="role">Foil • Epee • Sabre</div>
+            <p class="meta">USA Fencing certified | 30+ years in fencing • Coach & Referee</p>
+            <p>Adam Kaszubowski has been involved with fencing for more than 30 years, first as an athlete and then as a coach and referee. He was a bronze individual and team gold medalist at the 1994 Polish Cadet Championships, as well as a silver team medalist at both the 1996 and 1997 Polish Junior Championships.</p>
+            <p>In July 2019, Kaszubowski joined the Penn State University fencing team, which took team runner-up at the 2021 NCAA Championships. Under his leadership at PSU, his athletes achieved nine All-American honors. In October 2024, Adam joined the UNC Fencing program. Championships: 1st place in Algiers 2016, Cairo 2015, Cairo 2014, and Cape Town 2013.</p>
+            <p>
+              <a href="https://goheels.com/sports/fencing/roster/coaches/adam-kaszubowski/4589" target="_blank" rel="noopener">View full profile</a>
+              • <a href="mailto:Kaszub@unc.edu">Kaszub@unc.edu</a>
+            </p>
+          </div>
+        </article>
+
+        <!-- Coach: Sherif Elbakry -->
+        <article class="coach-row">
+          <img class="coach-photo" src="images/coach.webp" alt="Coach Sherif Elbakry">
+          <div class="coach-body">
+            <h3>Sherif Elbakry</h3>
+            <div class="role">Sabre Specialist</div>
+            <p class="meta">NCAA experience | Regional medalist</p>
+            <p>Assistant coach at UNC and sabre specialist. Sherif supports athlete development, bout preparation, and team operations with a focus on disciplined technique.</p>
+            <p>
+              <a href="https://goheels.com/sports/fencing/roster/coaches/sherif-mohamed-elbakry/4588" target="_blank" rel="noopener">View full profile</a>
+              • <a href="mailto:selbakry@unc.edu">selbakry@unc.edu</a>
+            </p>
+          </div>
+        </article>
+
+        <!-- Coach: Matt Jednak -->
+        <article class="coach-row">
+          <img class="coach-photo" src="images/coach3.jpg" alt="Coach Matt Jednak">
+          <div class="coach-body">
+            <h3>Matt Jednak</h3>
+            <div class="role">Head Coach</div>
+            <p class="meta">ACC Men's Fencing Coach of the Year | UNC Alumnus</p>
+            <p>Head coach of Carolina Fencing, leading the Tar Heels to the 2024 ACC men's team title — the program's first since 1980. A former UNC fencer and assistant, he was named head coach in 2019 and has guided athletes with a focus on technical excellence, tactics, and competitive development.</p>
+            <p>
+              <a href="https://goheels.com/sports/fencing/roster/coaches/matt-jednak/3592" target="_blank" rel="noopener">View full profile</a>
+              • <a href="mailto:jednak@email.unc.edu">jednak@email.unc.edu</a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <!-- Contact/Schedule Info Hero -->
+    <section class="info-hero" aria-label="Contact and schedule">
+      <div class="container">
+        <h2>Get In Touch & Visit Us</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <div class="info-content">
+              <h3>Email</h3>
+              <p><a href="mailto:tarheelsfencingacademy@gmail.com">tarheelsfencingacademy@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <div class="info-content">
+              <h3>Phone</h3>
+              <p><a href="tel:+15512561522">551-256-1522</a></p>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+            <div class="info-content">
+              <h3>Schedule</h3>
+              <p>Introductory: Mon &amp; Wed 5:30–6:30 PM</p>
+              <p>Competitive: Mon–Wed 6:00–8:00 PM</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <div class="info-content">
+              <h3>Address</h3>
+              <p>Fetzer Building, UNC Chapel Hill, NC</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
     <!-- Footer -->
