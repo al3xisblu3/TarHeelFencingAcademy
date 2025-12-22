@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Gallery | Tar Heels Fencing Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root { --primary-color:#1a365d; --secondary-color:#e53e3e; --light-color:#f7fafc; --text-color:#4a5568; --transition:.3s ease; }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;color:var(--text-color);background:#fff}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+    /* Navbar (match home page) */
+    .navbar{background-color:#4B9CD3;box-shadow:0 2px 10px rgba(0,0,0,.1);position:fixed;width:100%;top:0;z-index:1000}
+    .navbar .container{display:flex;justify-content:space-between;align-items:center;padding:0 20px;height:56px}
+    .logo{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;color:#fff;font-size:1.25rem;line-height:1}
+    .logo img{height:56px;width:auto;display:block}
+    #menu-toggle{display:none}
+    .menu-icon{display:none;font-size:1.5rem;color:#fff;background:none;border:none}
+    .nav-links{display:flex;gap:2rem}
+    .nav-links a{color:#fff;position:relative}
+    .nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:rgba(255,255,255,.9);transition:var(--transition)}
+    .nav-links a:hover::after{width:100%}
+    /* Dropdown (Home & Programs) */
+    .dropdown{position:relative}
+    .dropbtn{background:transparent;border:1px solid rgba(255,255,255,0.35);border-radius:20px;color:#fff;padding:6px 12px;font:inherit;cursor:pointer;display:inline-flex;gap:.5rem;align-items:center}
+    .dropdown::after{content:"";position:absolute;left:0;right:0;top:100%;height:10px;pointer-events:none}
+    .dropdown-content{display:none;position:absolute;top:100%;left:0;min-width:220px;background:#fff;border-radius:8px;box-shadow:0 10px 20px rgba(0,0,0,0.15);overflow:hidden;z-index:1001}
+    .dropdown-content a{display:block;padding:10px 14px;color:var(--primary-color);border-bottom:1px solid #edf2f7}
+    .dropdown-content a:last-child{border-bottom:none}
+    .dropdown:hover .dropdown-content,.dropdown:focus-within .dropdown-content{display:block}
+
+    @media(max-width:768px){
+      .menu-icon{display:block}
+      .nav-links{display:none;position:absolute;left:20px;right:20px;top:44px;background:#fff;flex-direction:column;padding:1rem;border-radius:8px;box-shadow:0 10px 20px rgba(0,0,0,.1)}
+      .nav-links a{color:var(--primary-color)}
+      .dropbtn{color:var(--primary-color);border-color:#cbd5e0}
+      .dropdown-content{position:static;display:block;background:transparent;box-shadow:none;border-radius:0}
+      .dropdown-content a{padding:8px 0;border-bottom:none}
+      #menu-toggle:checked~.nav-links{display:flex}
+      .logo img{height:44px}
+      .navbar .container{height:44px}
+    }
+
+    /* Page heading strip (match home coaches heading) */
+    .coaches-hero{background:#4B9CD3;padding:2rem 0;margin-top:56px}
+    .coaches-heading{text-align:center;text-transform:uppercase;letter-spacing:2px;margin:0;color:#ffffff}
+
+    .gallery{padding:4rem 0;background:var(--light-color);margin-top:0}
+    .placeholder{background:#fff;border:1px dashed #cbd5e0;border-radius:12px;padding:3rem;text-align:center;color:#718096}
+    .placeholder h2{color:var(--primary-color);margin-bottom:.5rem}
+    /* Gallery grid */
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .gallery-item{position:relative;overflow:hidden;border-radius:12px;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+    .gallery-item img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform var(--transition)}
+    .gallery-item:hover img{transform:scale(1.04)}
+    .gallery-item a{display:block}
+    /* Fixed 3x3 layout keeps square thumbs across sizes */
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a class="logo" href="index.html" aria-label="Tar Heels Fencing Academy home">
+        <img src="images/newlogo.png" alt="THFA logo">
+        <span>Tar Heels Fencing Academy</span>
+      </a>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon" aria-label="Toggle menu"><i class="fas fa-bars"></i></label>
+      <div class="nav-links">
+        <div class="dropdown">
+          <button class="dropbtn">Home <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="dropdown-content" role="menu">
+            <a href="index.html" role="menuitem">Coaches</a>
+            <a href="about-thfa.html" role="menuitem">About THFA</a>
+            <a href="gallery.html" role="menuitem">Photo Gallery</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Programs <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="dropdown-content" role="menu">
+            <a href="programs.html" role="menuitem">Programs</a>
+            <a href="schedule.html" role="menuitem">Schedule</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="coaches-hero">
+    <div class="container">
+      <h1 class="coaches-heading">PHOTO GALLERY</h1>
+    </div>
+  </div>
+
+  <section class="gallery">
+    <div class="container">
+      <div class="gallery-grid" aria-label="Photo gallery">
+        <div class="gallery-item"><a href="photogallary/IMG_4208.JPG" target="_blank" rel="noopener"><img src="photogallary/IMG_4208.JPG" alt="Tar Heels Fencing Academy photo 4208" loading="lazy"></a></div>
+        <div class="gallery-item"><a href="photogallary/IMG_4209.JPG" target="_blank" rel="noopener"><img src="photogallary/IMG_4209.JPG" alt="Tar Heels Fencing Academy photo 4209" loading="lazy"></a></div>
+        <div class="gallery-item"><a href="photogallary/IMG_4210.JPG" target="_blank" rel="noopener"><img src="photogallary/IMG_4210.JPG" alt="Tar Heels Fencing Academy photo 4210" loading="lazy"></a></div>
+        <div class="gallery-item"><a href="photogallary/IMG_4211.JPG" target="_blank" rel="noopener"><img src="photogallary/IMG_4211.JPG" alt="Tar Heels Fencing Academy photo 4211" loading="lazy"></a></div>
+        <div class="gallery-item"><a href="photogallary/IMG_4212.JPG" target="_blank" rel="noopener"><img src="photogallary/IMG_4212.JPG" alt="Tar Heels Fencing Academy photo 4212" loading="lazy"></a></div>
+        <div class="gallery-item"><a href="photogallary/IMG_4213.JPG" target="_blank" rel="noopener"><img src="photogallary/IMG_4213.JPG" alt="Tar Heels Fencing Academy photo 4213" loading="lazy"></a></div>
+        <div class="gallery-item"><a href="photogallary/IMG_4217.JPG" target="_blank" rel="noopener"><img src="photogallary/IMG_4217.JPG" alt="Tar Heels Fencing Academy photo 4217" loading="lazy"></a></div>
+        <div class="gallery-item"><a href="photogallary/IMG_4218.JPG" target="_blank" rel="noopener"><img src="photogallary/IMG_4218.JPG" alt="Tar Heels Fencing Academy photo 4218" loading="lazy"></a></div>
+        <div class="gallery-item"><a href="photogallary/IMG_4219.JPG" target="_blank" rel="noopener"><img src="photogallary/IMG_4219.JPG" alt="Tar Heels Fencing Academy photo 4219" loading="lazy"></a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container"><p>&copy; 2025 Tar Heels Fencing Academy. All rights reserved.</p></div>
+  </footer>
+</body>
+</html>
